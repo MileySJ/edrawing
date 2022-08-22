@@ -1,12 +1,12 @@
 # edrawing
 
-in this platform you can sell your artworks simple by signing up and uploading them.
-you can also fin our local art supplies shop 🎨
+in this platform you can sell your artworks simply by signing up and uploading them.
+you can also find our local art supplies shop 🎨
 
 # Work in progress
-- add apps
-- add models
-- add users admin site
+- add homepage 
+- create users
+- create groups
 
 # Install
 ```
