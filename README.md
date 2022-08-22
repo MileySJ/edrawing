@@ -4,9 +4,9 @@ in this platform you can sell your artworks simple by signing up and uploading t
 you can also fin our local art supplies shop 🎨
 
 # Work in progress
-- add apps
-- add models
-- add users admin site
+- add homepage 
+- create users
+- create groups
 
 # Install
 ```
