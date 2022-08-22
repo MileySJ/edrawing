@@ -15,7 +15,7 @@ class Art(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField(max_length=400)
     price = models.IntegerField()
-    artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
+    artist = models.ForeignKey(Artist, on_delete=models.CASCADE, related_name='arts')
 
     def __str__(self):
         return self.title
