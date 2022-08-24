@@ -1,0 +1,22 @@
+{% extends 'art_shop/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="row m-5">
+    <div class="col-6 text-center py-5">
+        <img class="img-fluid" src="{% static 'art_shop/logo.png' %}">
+
+    </div>
+    <div class="col-6 text-center py-5" id="hometext">
+        <p>Welcome to edrawing, a platform made for artists by artists!</p>
+        <br>
+        <p>Where you can easily post your art for sale, simply by signing up and posting it. You can also support other creative professionals by buying their work.
+        You can also enjoy our art supplies shop, to buy some of your favourite tools at affordable prices.</p>
+        <br>
+        <p>Join today and be a part of our edrawing community</p>
+    </div>
+</div>
+
+{% endblock %}
