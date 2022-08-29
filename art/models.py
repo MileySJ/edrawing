@@ -4,7 +4,7 @@ from django.conf import settings
 
 
 class Artist(models.Model):
-    account = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    account = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='artists')
 
     def __str__(self):
         return self.account.username
