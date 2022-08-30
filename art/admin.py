@@ -1,6 +1,10 @@
 from django.contrib import admin
 from .models import Artist, Art
 from django.conf import settings
+from django import forms
+
+
+
 
 
 class ArtistAdmin(admin.ModelAdmin):
@@ -22,9 +26,28 @@ class ArtistAdmin(admin.ModelAdmin):
     def art_count(self, obj):
         return obj.arts.count()
 
+class ArtForm(forms.ModelForm):
+    def __init__(self, *arg, **kwargs):
+        super().__init__(*arg, **kwargs)
+        
+        if not self.current_user.is_superuser:
+            qs = self.fields['artist'].queryset
+            qs = qs.filter(account=self.current_user)
+            self.fields['artist'].queryset = qs
+
+    class Meta:
+        model = Art
+        exclude = ('',)
 
 class ArtAdmin(admin.ModelAdmin):
+    form = ArtForm
     list_display = ('title', 'artist')
+
+# a memorizar
+    def get_form(self, request, *args, **kwargs):
+        f = super().get_form(request, *args, **kwargs)
+        f.current_user = request.user
+        return f
 
     def get_queryset(self, request):
         qs = super().get_queryset(request)
